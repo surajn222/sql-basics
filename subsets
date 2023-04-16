@@ -1,0 +1,28 @@
+
+8. What are the subsets of SQL?
+SQL queries are divided into four main categories:
+
+Data Definition Language (DDL)
+DDL queries are made up of SQL commands that can be used to define the structure of the database and modify it.
+CREATE Creates databases, tables, schema, etc.
+DROP: Drops tables and other database objects
+DROP COLUMN: Drops a column from any table structure
+ALTER: Alters the definition of database objects
+TRUNCATE: Removes tables, views, procedures, and other database objects
+ADD COLUMN: Adds any column to the table schema
+Data Manipulation Language (DML)
+These SQL queries are used to manipulate data in a database.
+SELECT INTO: Selects data from one table and inserts it into another
+INSERT: Inserts data or records into a table
+UPDATE: Updates the value of any record in the database
+DELETE: Deletes records from a table
+Data Control Language (DCL)
+These SQL queries manage the access rights and permission control of the database.
+GRANT: Grants access rights to database objects
+REVOKE: Withdraws permission from database objects
+Transaction Control Language (TCL)
+TCL is a set of commands that essentially manages the transactions in a database and the changes made by the DML statements. TCL allows statements to be grouped together into logical transactions.
+COMMIT: Commits an irreversible transaction, i.e., the previous image of the database prior to the transaction cannot be retrieved
+ROLLBACK: Reverts the steps in a transaction in case of an error
+SAVEPOINT: Sets a savepoint in the transaction to which rollback can be executed
+SET TRANSACTION: Sets the characteristics of the transaction

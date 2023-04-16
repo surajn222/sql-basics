@@ -1,0 +1,174 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+'object London
+'object Washington
+'object Berlin
+'object NewYork
+'
+'map CapitalCity {
+' UK *-> London
+' USA *--> Washington
+' Germany *---> Berlin
+'}
+'
+'NewYork --> CapitalCity::USA
+
+
+object RankFunction
+
+map RankFunction {
+    1. Row_number
+    2. Rank
+    3. Dense_Rank
+}
+
+
+object Row_number
+
+map Row_number {
+
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, ROW_NUMBER() OVER(ORDER BY Marks) RowNumber FROM ExamResult
+    Procedure:
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel)
+    \t\t    2. Attach Row_number based on this Sorted List
+
+    \n
+    Variations: SELECT STUDENTNAME, SUBJECT, MARKS, ROW_NUMBER() OVER(PARTITION BY SUBJECT ORDER BY Marks) RowNumber FROM ExamResult
+    Procedure:
+    \t\t    0. Group by STUDENTNAME
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+
+    \n
+    Variations: SELECT STUDENTNAME, SUBJECT, MARKS, ROW_NUMBER() OVER(PARTITION BY STUDENTNAME,SUBJECT ORDER BY Marks) RowNumber FROM ExamResult
+    Procedure:
+    \t\t    0. Group by STUDENTNAME, SUBJECT
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+
+}
+
+
+
+
+
+
+
+
+object Rank
+
+map Rank {
+
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, RANK() OVER(ORDER BY Marks) Rnk FROM ExamResult;
+    Procedure:
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel)
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    2.1 If there is a duplicate found in ORDER BY PARAM, duplicate found in Marks, then same rank is assigned to the duplicated rows, and one rank is skipped later
+
+    \n
+    Variations: SELECT STUDENTNAME, SUBJECT, MARKS, RANK() OVER(PARTITION BY SUBJECT ORDER BY Marks) Rnk FROM ExamResult;
+    Procedure:
+    \t\t    0. Group by STUDENTNAME
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    2.1 If there is a duplicate found in ORDER BY PARAM, duplicate found in Marks, then same rank is assigned to the duplicated rows, and one rank is skipped later
+
+    \n
+    Variations: SELECT STUDENTNAME, SUBJECT, MARKS, RANK() OVER(PARTITION BY STUDENTNAME,SUBJECT ORDER BY Marks) Rnk FROM ExamResult;
+    Procedure:
+    \t\t    0. Group by STUDENTNAME, SUBJECT
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    2.1 If there is a duplicate found in ORDER BY PARAM, duplicate found in Marks, then same rank is assigned to the duplicated rows, and one rank is skipped later
+
+}
+
+
+
+
+
+
+
+object Dense_Rank
+
+map Dense_Rank {
+
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, DENSE_RANK() OVER(ORDER BY Marks) DenseRnk FROM ExamResult;
+    Procedure:
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel)
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    2.1 If there is a duplicate found in ORDER BY PARAM, duplicate found in Marks, then same rank is assigned to the duplicated rows, and one rank is skipped later
+
+    \n
+    Variations: SELECT STUDENTNAME, SUBJECT, MARKS, DENSE_RANK() OVER(PARTITION BY MARKS ORDER BY Marks) DenseRnk FROM ExamResult;
+    Procedure:
+    \t\t    0. Group by STUDENTNAME
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    2.1 If there is a duplicate found in ORDER BY PARAM, duplicate found in Marks, then same rank is assigned to the duplicated rows, and one rank is skipped later
+
+    \n
+    Variations: SELECT STUDENTNAME, SUBJECT, MARKS, DENSE_RANK() OVER(PARTITION BY STUDENTNAME,SUBJECT ORDER BY Marks) DenseRnk FROM ExamResult;
+    Procedure:
+    \t\t    0. Group by STUDENTNAME, SUBJECT
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    2.1 If there is a duplicate found in ORDER BY PARAM, duplicate found in Marks, then same rank is assigned to the duplicated rows, and one rank is skipped later
+
+}
+
+object End
+
+top to bottom direction
+RankFunction -d-> Row_number
+RankFunction -d-> Rank
+RankFunction -d-> Dense_Rank
+
+
+
+object Summarize
+
+map Summarize {
+
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, ROW_NUMBER() OVER(ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, RANK()       OVER(ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, DENSE_RANK() OVER(ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Procedure:
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel)
+    \t\t    2. Attach RANK_FUNCTION based on this Sorted List
+    \t\t\t    Row_Number: 2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then different rank is assigned to the duplicated rows
+    \t\t\t    Rank:       2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then same rank is assigned to the duplicated rows, and one rank is skipped in the subsequent row
+    \t\t\t    Dense_Rank: 2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then same rank is assigned to the duplicated rows, and one rank is not skipped
+
+    \n
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, ROW_NUMBER() OVER(PARTITION BY STUDENTNAME, ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, RANK()       OVER(PARTITION BY STUDENTNAME, ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, DENSE_RANK() OVER(PARTITION BY STUDENTNAME, ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Procedure:
+    \t\t    0. Group by STUDENTNAME
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    Row_Number: 2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then different rank is assigned to the duplicated rows
+    \t\t\t    Rank:       2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then same rank is assigned to the duplicated rows, and one rank is skipped in the subsequent row
+    \t\t\t    Dense_Rank: 2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then same rank is assigned to the duplicated rows, and one rank is not skipped
+
+    \n
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, ROW_NUMBER() OVER(PARTITION BY STUDENTNAME,SUBJECT ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, RANK()       OVER(PARTITION BY STUDENTNAME,SUBJECT ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Syntax: SELECT STUDENTNAME, SUBJECT, MARKS, DENSE_RANK() OVER(PARTITION BY STUDENTNAME,SUBJECT ORDER BY Marks) RANK_FUNCTION FROM ExamResult;
+    Procedure:
+    \t\t    0. Group by STUDENTNAME, SUBJECT
+    \t\t    1. Order/Sort all rows by Marks Ascending (Like sorting in Excel) in every group. Start every group with 1
+    \t\t    2. Attach Row_number based on this Sorted List
+    \t\t\t    Row_Number: 2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then different rank is assigned to the duplicated rows
+    \t\t\t    Rank:       2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then same rank is assigned to the duplicated rows, and one rank is skipped in the subsequent row
+    \t\t\t    Dense_Rank: 2.1 If there is a duplicate found in ORDER BY param (duplicate found in Marks), then same rank is assigned to the duplicated rows, and one rank is not skipped
+
+}
+
+top to bottom direction
+End -d-> Summarize
+
+@enduml
+

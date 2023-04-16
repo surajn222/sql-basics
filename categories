@@ -1,0 +1,364 @@
+Database
+DBMS
+RDBMS
+SQL
+SQL vs Mysql
+Tables and Fields
+Constraints
+PrimaryKey
+Unique Constraint
+Foreign Key
+Joins
+Self Join
+Cross Join
+Index
+Clustered and Non clustered index
+Data integrity
+Query
+Subquery
+Select
+Cursor
+Entities and Relationships
+Alias
+View
+Normalization
+Denormalization
+Truncate
+Delete
+Drop
+Aggregate Functions
+Scalar Functions
+User-defined functions
+OLTP
+OLTP and OLAP
+Collation
+Stored Proc
+Pattern Matching
+Indexes
+Partitioned table in Postgresql
+Truncate
+Sequence
+ACID
+Commit and Checkpoint
+
+SQL
+DDL
+DML
+DCL
+TCL
+Tables and Fields
+Primary Key
+Foreign Key
+Unique Key
+DBMS
+Normalization
+Inconsistent dependency
+Denormalization
+SQL operators
+View
+Index
+Clustered Index
+Non-Clustered Index
+Alias
+Getdate
+Joins
+Inner Join
+Outer Join
+Right Join
+Left Join
+Full outer Join
+Trigger
+Self Join
+Set Operators
+IN and BETWEEN
+Constraint
+Pattern Matching
+Nth Max salary
+Delete
+Truncate
+ACID
+NULL
+Functions
+NVL
+Coalesce
+Distinct
+Order by
+Where vs Having
+Aggregate Functions
+SQL Injection
+Rank, Dense Rank
+
+subsets of sql
+DML
+DDL
+DCL
+
+DBMS
+RDBMS
+Self Join
+Select
+UNION
+MINUS
+INTERSECT
+CURSOR
+different types of relationships
+
+OLTP
+OLAP
+
+NVL
+Character manipulation
+CONCAT
+SUBSTR
+LENGTH
+INSTR
+LPAD
+RPAD
+TRIM
+REPLACE
+
+MAX
+RANK
+DENSE_RANK
+Tables and Fields
+UNIQUE
+Self Join
+Select
+Cursor
+CASE
+NOSQL vs SQL
+NOW() vs CURRENT_DATE()
+BLOB vs TEXT
+Remove Duplicate Rows
+Stored Proc
+MyISAM
+Nth Highest Salary
+
+Joins
+CHAR
+VARCHAR2
+Primary Key
+Constraints
+DELETE
+TRUNCATE
+Foreign Key
+Data Integrity
+Clustered and Non-clustered Index
+
+GetDate()
+Denormalization
+Entities and Relationships
+Index
+Unique Index
+Clustered Index
+Non-Clustered Index
+
+Normalization
+DROP
+TRUNCATE
+Types of Normalization
+Aggregate functions
+Order by
+Distinct
+Coalesce
+ACID
+Trigger
+Operators
+NULL
+Croos Join
+Natural Join
+
+Subquery
+Count
+Character matching
+Group functions
+
+Relationship
+NULL
+BETWEEN vs IN
+MERGE
+Recursive Stored Proc
+CLAUSE
+HAVING vs WHERE
+INTERSECT
+
+case manipulation
+SET operators
+ALIAS
+Aggregate
+Scalar
+Fetch Alternate records
+
+Pattern Matching
+Unique records
+View
+User defined Functions
+Collation
+Auto Increment
+
+Data Warehouse
+
+
+
+guru99
+DBMS
+RDBMS
+SQL
+Database
+Tables and Fields
+Primary Key
+Unique Key
+Foreign Key
+Join
+Types of Joins
+Normalization
+Denormalization
+View
+Index
+Unique Index
+Clustered Index
+NonClustered Index
+Cursor
+Relationship
+Query
+Subquery
+Types of subquery
+Stored Proc
+Trigger
+DELETE vs TRUNCATE
+Local and Global Variables
+Constraint
+Data Integrity
+Auto Increment
+Cluster vs Non-cluster Index
+Data warehouse
+Self Join
+Cross Join
+User defined functions
+Collation
+Types of Collation sensitivity
+Advantages and Disadvantages of Stored Proc
+OLTP
+Clause
+Recursive Stored Proc
+Union
+Minus
+Intersect
+Alias
+TRUNCATE vs DROP
+Aggregate and Scalar Functions
+Fetch Common Records
+Fetch Alternate Records
+Unique Records
+Fetch first 5 chars
+Character Matching
+
+https://www.mygreatlearning.com/blog/sql-interview-questions/
+SQL
+DBMS
+RDBMS
+Create a Table
+Delete a Table
+Change a Table Name
+Delete a row
+Normalization
+Join
+Primary Key
+Types of SQL
+DDL
+DML
+DCL
+TCL
+Nested Triggers
+OLTP
+Data Integrity
+OLAP
+Can you get the list of employees with same salary?
+TOP Clause
+Cartesian Product
+Delete a column
+Unique Key
+SQL Injection
+Trigger
+nth highest salary
+copy table in sql
+New column
+Like
+Alternate Records
+Commit
+Self Join
+Duplicate entries
+Empty table from existing table
+Odd records
+Non-equi example
+Delete duplicate records
+NVL and NVL2
+Clustered and Non-clustered indexes
+Duplicate records
+Case
+nth highest salary
+delete duplicate rows
+cursor
+Stored Proc
+Index
+Change column name
+Views
+Drop a column
+BETWEEN
+Subsets of sql
+CHAR and VARCHAR2
+Sort a column
+Coalesce
+IsNULL
+Trigger
+nth max salary
+aggregate functions
+scalar functions
+Deadlock
+left outer join
+sql injection
+union operator
+Constraints
+Alias
+Group functions
+NVL()
+Clause
+Recursive Stored Proc
+Bulk Copy
+Cross Join
+Pattern Matching
+Current Date
+Case manipulation
+Order
+IN vs Exists
+ACID
+Truncate
+Stored Proc
+Grant
+Normal form - First
+Blob and Text
+number of rows without the count function
+Duplicate rows - delete
+Case
+nth highest salary
+Non-clustered index
+
+SQL questions: https://www.mygreatlearning.com/blog/sql-interview-questions/
+
+Good answers here: https://intellipaat.com/blog/interview-question/sql-interview-questions/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
